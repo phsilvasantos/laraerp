@@ -5,16 +5,16 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>新增進貨單</h2>
+                <h2>Новый список покупок</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('purchase.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('purchase.index') }}"> Назад</a>
             </div>
         </div>
     </div>
     @if (count($errors) > 0)
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <strong>Упс!</strong> Возникли проблемы.<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -26,20 +26,20 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>進貨單號:</strong>
-                {!! Form::text('purchase_no','自動產生', array('placeholder' => 'No','class' => 'form-control', 'disabled' => true)) !!}
+                <strong>Номер заказа на покупку:</strong>
+                {!! Form::text('purchase_no','Автоматически генерируется', array('placeholder' => 'No','class' => 'form-control', 'disabled' => true)) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
 
             <div class="form-group">
-                <strong>供應商:</strong>
+                <strong>Поставщики:</strong>
                 {!! Form::select('manufacturer_id', $manufacturer, [], array('class' => 'form-control chosen','id'=>'categories')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>經辦人:</strong>
+                <strong>Менеджер:</strong>
                 {!! Form::text('user_id', $user_name, array('placeholder' => 'id','class' => 'form-control', 'disabled' => true)) !!}
             </div>
         </div>
@@ -48,16 +48,16 @@
             <table class="table table-bordered" id="tableA">
                 <tr>
                     <th width="100px">No</th>
-                    <th>商品</th>
-                    <th>數量</th>
-                    <th>價錢</th>
-                    <th width="280px">Action</th>
+                    <th>Товары</th>
+                    <th>Количество</th>
+                    <th>Цена</th>
+                    <th width="280px">Действие</th>
                 </tr>
 
                 <tr class="form-group fieldGroup">
                     <td width="100px" class="no">1</td>
                     <td>
-                        {!! Form::select('product_id[]', [''=>'請選擇'], [], array('class' => 'form-control chosen','id'=>'product')) !!}
+                        {!! Form::select('product_id[]', [''=>'Пожалуйста, выберите'], [], array('class' => 'form-control chosen','id'=>'product')) !!}
                     </td>
                     <td>
                         {!! Form::number('qty[]', null, array('placeholder' => '0','class' => 'form-control','min'=>0)) !!}
@@ -69,14 +69,14 @@
                         <div class="input-group-addon">
                             <a href="javascript:void(0)" class="btn btn-success addMore"><span
                                         class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                Add</a>
+                                Добавить</a>
                         </div>
                     </td>
 
                 </tr>
                 <tr class="form-group fieldGroupCopy" style="display: none;">
                     <td>
-                        {!! Form::select('product_id[]', ['0'=>'請選擇'], [], array('class' => 'form-control Copychosen','id'=>'productCopy')) !!}
+                        {!! Form::select('product_id[]', ['0'=>'Пожалуйста, выберите'], [], array('class' => 'form-control Copychosen','id'=>'productCopy')) !!}
                     </td>
                     <td>
                         {!! Form::number('qty[]', 1, array('placeholder' => '0','class' => 'form-control','min'=>0)) !!}
@@ -88,7 +88,7 @@
                         <div class="input-group-addon">
                             <a href="javascript:void(0)" class="btn btn-danger remove"><span
                                         class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                Remove</a>
+                                Удалить</a>
                         </div>
                     </td>
 
@@ -99,7 +99,7 @@
 
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary submit">Submit</button>
+            <button type="submit" class="btn btn-primary submit">Подтвердить</button>
         </div>
     </div>
 

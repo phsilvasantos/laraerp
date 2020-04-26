@@ -5,14 +5,14 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
+                    <div class="panel-heading">Регистрация</div>
 
                     <div class="panel-body">
                         <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('user_name') ? ' has-error' : '' }}">
-                                <label for="user_name" class="col-md-4 control-label">Name</label>
+                                <label for="user_name" class="col-md-4 control-label">Имя</label>
 
                                 <div class="col-md-6">
                                     <input id="user_name" type="text" class="form-control" name="user_name" value="{{ old('user_name') }}" required autofocus>
@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('user_birth') ? ' has-error' : '' }}">
-                                <label for="user_birth" class="col-md-4 control-label">Birth</label>
+                                <label for="user_birth" class="col-md-4 control-label">День рождение</label>
 
                                 <div class="col-md-6">
                                     <input id="user_birth" type="date" class="form-control" name="user_birth" required>
@@ -54,7 +54,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('user_addr') ? ' has-error' : '' }}">
-                                <label for="user_addr" class="col-md-4 control-label">Address</label>
+                                <label for="user_addr" class="col-md-4 control-label">Адрес</label>
 
                                 <div class="col-md-6">
                                     <input id="user_addr" type="text" class="form-control" name="user_addr" required>
@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('user_phone') ? ' has-error' : '' }}">
-                                <label for="user_phone" class="col-md-4 control-label">Phone</label>
+                                <label for="user_phone" class="col-md-4 control-label">Телефон</label>
 
                                 <div class="col-md-6">
                                     <input id="user_phone" type="text" class="form-control" name="user_phone" required>
@@ -85,7 +85,7 @@
                                 <div class="col-md-6 col-md-offset-4">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="user_status" {{ old('user_status') ? 'checked' : '' }}> 開通帳號
+                                            <input type="checkbox" name="user_status" {{ old('user_status') ? 'checked' : '' }}> Принимаю все условия
                                         </label>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Register
+                                        Зарегистрироваться
                                     </button>
                                 </div>
                             </div>

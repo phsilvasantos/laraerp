@@ -4,78 +4,78 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>商品資料</h2>
+                <h2>Информация о продукте</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('product.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('product.index') }}"> Назад</a>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品編號:</strong>
+                <strong>Код продукта:</strong>
                 {{ $product->product_code }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品名稱:</strong>
+                <strong>Название:</strong>
                 {{ $product->product_name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品類別:</strong>
+                <strong>Категория продукта:</strong>
                 {{$product->product_category->category_name}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品定位:</strong>
+                <strong>Позиционирование продукта:</strong>
                 @if($product->product_or_item == 0 )
-                    成品
+                    Готовая продукция
                 @elseif($product->product_or_item == 1)
-                    半成品
+                    Полуфабрикаты
                 @else
-                    原料
+                    Сырье
                 @endif
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品價格:</strong>
+                <strong>Цена:</strong>
                 {{$product->product_price}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>通用碼:</strong>
+                <strong>Универсальный код:</strong>
                 {{$product->common_code->code_name}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>供應商:</strong>
+                <strong>Поставщики:</strong>
                 {{$product->manufacturer->manufacturer_name}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品狀態:</strong>
+                <strong>Товарный статус:</strong>
                 @if($product->product_status == 1)
-                    上架
+                    Положить на полки
                 @else
-                    下架
+                    С полки
                 @endif
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
-        <strong>物料清單</strong>
+        <strong>Ведомость материалов</strong>
         <table>
             <tr>
-                <td>物料名稱</td>
-                <td>數量</td>
+                <td>Название</td>
+                <td>количество</td>
             </tr>
             @each('product.child', $product_table, 'product_table')
         </table>

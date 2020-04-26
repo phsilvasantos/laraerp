@@ -22,17 +22,17 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>代碼</th>
-            <th>名稱</th>
-            <th>負責人</th>
-            <th>電話</th>
-            <th>傳真</th>
+            <th>Код</th>
+            <th>Имя</th>
+            <th>Ответственное лицо</th>
+            <th>Телефон</th>
+            <th>Факс</th>
             <th>Email</th>
-            <th>網址</th>
-            <th>郵遞區號</th>
-            <th>地址</th>
-            <th>統編</th>
-            <th width="280px">Action</th>
+            <th>Сайт</th>
+            <th>Почтовый индекс</th>
+            <th>Адрес</th>
+            <th>Номер-GUI</th>
+            <th width="280px">Действие</th>
         </tr>
         @foreach ($companys as $key => $company)
             <tr>
@@ -48,9 +48,9 @@
                 <td>{{ $company->company_address }}</td>
                 <td>{{ $company->company_GUInumber }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ route('company.show',$company->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('company.show',$company->id) }}">Просмотр</a>
                     {{--@permission('company-edit')--}}
-                    <a class="btn btn-primary" href="{{ route('company.edit',$company->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('company.edit',$company->id) }}">Редактировать</a>
                     {{--@endpermission--}}
                 </td>
             </tr>

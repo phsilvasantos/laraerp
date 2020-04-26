@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>商品資料</h2>
+                <h2>Информация о продукте</h2>
             </div>
             <div class="pull-right">
                 @permission('product-create')
-                <a class="btn btn-success" href="{{ route('product.create') }}">新增商品</a>
+                <a class="btn btn-success" href="{{ route('product.create') }}">Новый продукт</a>
                 @endpermission
             </div>
         </div>
@@ -22,12 +22,12 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>編號</th>
-            <th>名稱</th>
-            <th>價格</th>
-            <th>供應商</th>
-            <th>庫存</th>
-            <th width="280px">Action</th>
+            <th>Номер</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Поставщики</th>
+            <th>Акции</th>
+            <th width="280px">Действие</th>
         </tr>
         @foreach ($products as $key => $product)
             <tr>
@@ -38,15 +38,15 @@
                 <td>{{ $product->manufacturer->manufacturer_name }}</td>
                 <td>{{ $product->product_stock }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ route('product.show',$product->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('product.show',$product->id) }}">Просмотр</a>
                     @permission('product-edit')
-                    <a class="btn btn-primary" href="{{ route('product.edit',$product->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('product.edit',$product->id) }}">Редактировать</a>
                     @endpermission
                     @permission('product_status')
                     @if($product->product_status == 0)
-                        <a class="btn btn-success" href="{{ route('product.status',[1,$product->id]) }}">啟用</a>
+                        <a class="btn btn-success" href="{{ route('product.status',[1,$product->id]) }}">Включить</a>
                     @else
-                        <a class="btn btn-warning" href="{{ route('product.status',[0,$product->id]) }}">禁用</a>
+                        <a class="btn btn-warning" href="{{ route('product.status',[0,$product->id]) }}">Отключить</a>
                     @endif
                     @endpermission
                 </td>

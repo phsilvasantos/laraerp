@@ -5,16 +5,16 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>新增商品</h2>
+                <h2>Создать продукт</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('product.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('product.index') }}"> Назад</a>
             </div>
         </div>
     </div>
     @if (count($errors) > 0)
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <strong>Упс!</strong> Возникли проблемы.<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -26,19 +26,19 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品編號:</strong>
-                {!! Form::text('product_code', null, array('placeholder' => 'Code', 'class' => 'form-control', 'id' => 'product_code')) !!}
+                <strong>Код продукта:</strong>
+                {!! Form::text('product_code', null, array('placeholder' => 'Код', 'class' => 'form-control', 'id' => 'product_code')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品名稱:</strong>
-                {!! Form::text('product_name', null, array('placeholder' => 'Name','class' => 'form-control', 'id' => 'product_name')) !!}
+                <strong>Название:</strong>
+                {!! Form::text('product_name', null, array('placeholder' => 'Названия','class' => 'form-control', 'id' => 'product_name')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品類別:</strong>
+                <strong>Категория продукта:</strong>
                 <select name="category_id" id="category_id">
                     @each('product_categories.child_select', $product_categories, 'category')
                 </select>
@@ -46,32 +46,32 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品價格:</strong>
+                <strong>Цена:</strong>
                 {!! Form::text('product_price', null, array('placeholder' => 'Price','class' => 'form-control', 'id' => 'product_price')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>通用碼:</strong>
+                <strong>Универсальный код:</strong>
                 {!! Form::select('common_id',  $common_code, [], array('class' => 'form-control', 'id' => 'common_id')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>供應商:</strong>
+                <strong>Поставщики:</strong>
                 {!! Form::select('manufacturer_id', $manufacturer, [], array('class' => 'form-control', 'id' => 'manufacturer_id')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品狀態:</strong>
+                <strong>Товарный статус:</strong>
                 <input id="product_status" name="product_status" type="checkbox" value="1">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>商品定位:</strong>
-                {!! Form::select('product_or_item',['成品','半成品','原料'], [], array('class' => 'form-control', 'id' => 'product_or_item', 'onchange'=>'ShowHideDiv(this)')) !!}
+                <strong>Позиционирование продукта:</strong>
+                {!! Form::select('product_or_item',['Готовая продукция','Полуфабрикаты','Сырье'], [], array('class' => 'form-control', 'id' => 'product_or_item', 'onchange'=>'ShowHideDiv(this)')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -82,7 +82,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <div class='btn btn-small'>
-                {!! Form::submit('Submit',['class'=>'btn btn-primary form-control'])!!}
+                {!! Form::submit('Создать',['class'=>'btn btn-primary form-control'])!!}
             </div>
         </div>
     </div>
@@ -94,26 +94,26 @@
         $(function () {
             // Initialize appendGrid
             $('#tblAppendGrid').appendGrid({
-                caption: '原料清單',
+                caption: 'Список сырья',
                 initRows: 1,
                 columns: [
                     {
                         name: 'product_or_item',
-                        display: '商品定位',
+                        display: 'Позиционирование продукта',
                         type: 'select',
-                        ctrlOptions: {0: '{Choose}', 1: '成品', 2: '半成品', 3: '原料'},
+                        ctrlOptions: {0: '{Выбрать}', 1: 'Готовая продукция', 2: 'Полуфабрикаты', 3: 'Сырье'},
                         onChange: handleCascadeChange
                     },
                     {
                         name: 'product_name',
-                        display: '商品',
+                        display: 'Товары',
                         type: 'select',
-                        ctrlOptions: {0: '{Choose}'},
+                        ctrlOptions: {0: '{Выбрать}'},
                         ctrlAttr: {disabled: 'disabled'}
                     },
                     {
                         name: 'qty',
-                        display: '數量',
+                        display: 'количество',
                         type: 'text',
                         ctrlAttr: {maxlength: 10},
                         ctrlCss: {width: '50px', 'text-align': 'right'},

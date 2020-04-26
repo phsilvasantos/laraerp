@@ -47,7 +47,7 @@
                     @guest
                         @else
                             <ul class="nav navbar-nav">
-                                <li><a href="{{ url('/home') }}">Home</a></li>
+                                <li><a href="{{ url('/home') }}">Главная</a></li>
 
                                 @foreach($menus->parent_menus as $parent_menu)
                                         <li class="dropdown">
@@ -72,7 +72,7 @@
 
                                 {{--<li><a href="{{ route('users.index') }}">Users</a></li>--}}
                                 {{--<li><a href="{{ route('roles.index') }}">Roles</a></li>--}}
-                                {{--<li><a href="{{ route('permissions.index') }}">Permissions</a></li>--}}
+                                {{--<li><a href="{{ route('permissions.index') }}">Разрешениеs</a></li>--}}
                                 {{--<li><a href="{{ route('company.index') }}">Company</a></li>--}}
                                 {{--<li><a href="{{ route('customer.index') }}">Customer</a></li>--}}
                                 {{--<li><a href="{{ route('manufacturer.index') }}">Manufacturer</a></li>--}}
@@ -80,41 +80,45 @@
                         @endguest
 
                         <!-- Right Side Of Navbar -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <!-- Authentication Links -->
-                                @guest
-                                    <li><a href="{{ route('login') }}">Login</a></li>
-                                    @else
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                               aria-expanded="false" aria-haspopup="true">
-                                                {{ Auth::user()->user_name }} <span class="caret"></span>
-                                            </a>
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- Authentication Links -->
+                            @guest
+                                <li><a href="{{ route('login') }}">Войти</a></li>
+                                @else
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                           aria-expanded="false" aria-haspopup="true">
+                                            {{ Auth::user()->user_name }} <span class="caret"></span>
+                                        </a>
 
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a href="{{ route('users.edit_profile',Auth::user()->user_id) }}">
-                                                        更新個人資料
-                                                    </a>
-                                                    <a href="{{ route('logout') }}"
-                                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                        Logout
-                                                    </a>
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                          style="display: none;">
-                                                        {{ csrf_field() }}
-                                                    </form>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        @endguest
-                            </ul>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ route('users.edit_profile',Auth::user()->user_id) }}">
+                                                    Редактировать личные данные
+                                                </a>
+                                                <a href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                                    Выйти
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                      style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            @endguest
+                        </ul>
                 </div>
             </div>
+        </div>
     </nav>
+    <div class="container">
+        @yield('content')
+    </div>
 </div>
-@yield('content')
+
 
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/jquery.min.js') }}"></script>

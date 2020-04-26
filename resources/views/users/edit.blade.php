@@ -4,16 +4,16 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit New User</h2>
+                <h2>Редактировать пользователя</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('users.index') }}"> Назад</a>
             </div>
         </div>
     </div>
     @if (count($errors) > 0)
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <strong>Упс!</strong> Возникли проблемы.<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -25,14 +25,14 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                {!! Form::text('user_name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                <strong>Имя:</strong>
+                {!! Form::text('user_name', null, array('placeholder' => 'Имя','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Birthday:</strong>
-                {!! Form::date('user_birth', null, array('placeholder' => 'Birth','class' => 'form-control')) !!}
+                <strong>День рождения:</strong>
+                {!! Form::date('user_birth', null, array('placeholder' => 'День рождения','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -43,24 +43,24 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Address:</strong>
-                {!! Form::text('user_addr', null, array('placeholder' => 'Address','class' => 'form-control')) !!}
+                <strong>Адрес:</strong>
+                {!! Form::text('user_addr', null, array('placeholder' => 'Адрес','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Phone:</strong>
-                {!! Form::text('user_phone', null, array('placeholder' => 'Phone','class' => 'form-control')) !!}
+                <strong>Телефон:</strong>
+                {!! Form::text('user_phone', null, array('placeholder' => 'Телефон','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Role:</strong>
+                <strong>Роли:</strong>
                 {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Подтвердить</button>
         </div>
     </div>
     {!! Form::close() !!}

@@ -4,23 +4,23 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> 顯示共通代碼</h2>
+                <h2> Просмотр общий код</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('commoncode.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('commoncode.index') }}"> Назад</a>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>代碼名稱:</strong>
+                <strong>Название:</strong>
                 {{ $common->code_name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>父類別:</strong>
+                <strong>Родительская категория:</strong>
                 @if($common->parent_id=='#')
                     <td>#</td>
                 @else
@@ -29,7 +29,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>對應系統:</strong>
+                <strong>Соответствующая система:</strong>
                 {{ $common->permission->display_name }}
             </div>
         </div>

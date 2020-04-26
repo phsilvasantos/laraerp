@@ -34,7 +34,7 @@ class PurchaseController extends Controller
         //
         $manufacturers = Manufacturer::pluck('manufacturer_name', 'id')->all();
 
-        $collection = collect([''=>'請選擇']);
+        $collection = collect([''=>'Пожалуйста, выберите']);
         foreach ($manufacturers as $key => $value) {
             $collection->put($key, $value);
         }
@@ -175,7 +175,7 @@ class PurchaseController extends Controller
         //
         $products=Product::where('manufacturer_id', $request->categories)->pluck('product_name','id');
         $array=Array();
-        $array = array_add($array, 0, ['id'=>'0','product_name'=>'請選擇']);
+        $array = array_add($array, 0, ['id'=>'0','product_name'=>'Пожалуйста, выберите']);
 
         $i=1;
         foreach ($products as $key => $value) {
@@ -183,7 +183,7 @@ class PurchaseController extends Controller
             $i++;
         }
 
-        $collection = collect(['0'=>'請選擇']);
+        $collection = collect(['0'=>'Пожалуйста, выберите']);
         foreach ($products as $key => $value) {
             $collection->put($key, $value);
         }

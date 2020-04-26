@@ -2,10 +2,10 @@
 <td>{{ str_repeat('----', isset($i) ? $i++ : 0) . $category['category']->category_name }}</td>
     <td>
     @permission('permission-show')
-    <a class="btn btn-info" href="{{ route('product_categories.show', $category['category']->id) }}">Show</a>
+    <a class="btn btn-info" href="{{ route('product_categories.show', $category['category']->id) }}">Просмотр</a>
     @endpermission
     @permission('product_categories-edit')
-    <a class="btn btn-primary" href="{{ route('product_categories.edit', $category['category']->id) }}">Edit</a>
+    <a class="btn btn-primary" href="{{ route('product_categories.edit', $category['category']->id) }}">Редактировать</a>
     @endpermission
     </td>
     @if(count($category['childs'])>0)

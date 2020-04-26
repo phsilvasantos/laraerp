@@ -19,25 +19,25 @@
         <td>{{ $category['category']->description }}</td>
         <td class="text-center">
             @if( $category['category']->status == 1)
-                <span class="text-navy">顯示</span>
+                <span class="text-navy">Показывать</span>
             @else
-                <span class="text-dnager">不顯示</span>
+                <span class="text-dnager">Не показывать</span>
             @endif
         </td>
         <td>
             @permission('permission-show')
-            <a class="btn btn-info" href="{{ route('permissions.show', $category['category']->id) }}">Show</a>
+            <a class="btn btn-info" href="{{ route('permissions.show', $category['category']->id) }}">Просмотр</a>
             @endpermission
             @permission('permission-edit')
-            <a class="btn btn-primary" href="{{ route('permissions.edit', $category['category']->id) }}">Edit</a>
+            <a class="btn btn-primary" href="{{ route('permissions.edit', $category['category']->id) }}">Редактировать</a>
             @endpermission
             @permission('permission-status')
             @if( $category['category']->status == 0)
                 <a class="btn btn-success"
-                   href="{{ route('permissions.status',[1, $category['category']->id]) }}">啟用</a>
+                   href="{{ route('permissions.status',[1, $category['category']->id]) }}">Включить</a>
             @else
                 <a class="btn btn-warning"
-                   href="{{ route('permissions.status',[0, $category['category']->id]) }}">禁用</a>
+                   href="{{ route('permissions.status',[0, $category['category']->id]) }}">Отключить</a>
             @endif
             @endpermission
         </td>

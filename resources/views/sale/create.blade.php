@@ -5,16 +5,16 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>新增銷貨單</h2>
+                <h2>Новый заказ на продажу</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('sale.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('sale.index') }}"> Назад</a>
             </div>
         </div>
     </div>
     @if (count($errors) > 0)
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <strong>Упс!</strong> Возникли проблемы.<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -26,20 +26,20 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>銷貨單號:</strong>
-                {!! Form::text('sale_no','自動產生', array('placeholder' => 'No','class' => 'form-control', 'disabled' => true)) !!}
+                <strong>Номер заказа на продажу:</strong>
+                {!! Form::text('sale_no','Автоматически генерируется', array('placeholder' => 'No','class' => 'form-control', 'disabled' => true)) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
 
             <div class="form-group">
-                <strong>客戶:</strong>
+                <strong>Клиент:</strong>
                 {!! Form::select('customer_id', $customer, [], array('class' => 'form-control chosen','id'=>'categories')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>經辦人:</strong>
+                <strong>Менеджер:</strong>
                 {!! Form::text('user_id', $user_name, array('placeholder' => 'id','class' => 'form-control', 'disabled' => true)) !!}
             </div>
         </div>
@@ -48,12 +48,12 @@
             <table class="table table-bordered" id="tableA">
                 <tr>
                     <th width="100px">No</th>
-                    <th>商品</th>
-                    <th>數量</th>
+                    <th>Товары</th>
+                    <th>Количество</th>
                     {{--<th>定價</th>--}}
-                    <th>售價</th>
-                    <th>小計</th>
-                    <th width="280px">Action</th>
+                    <th>Цена продажи</th>
+                    <th>Подуровень</th>
+                    <th width="280px">Действие</th>
                 </tr>
 
                 <tr class="form-group fieldGroup" id="tr1">
@@ -77,7 +77,7 @@
                         <div class="input-group-addon">
                             <a href="javascript:void(0)" class="btn btn-success addMore"><span
                                         class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                Add</a>
+                                Добавить</a>
                         </div>
                     </td>
 
@@ -102,7 +102,7 @@
                         <div class="input-group-addon">
                             <a href="javascript:void(0)" class="btn btn-danger remove"><span
                                         class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                Remove</a>
+                                Удалить</a>
                         </div>
                     </td>
 
@@ -110,14 +110,14 @@
 
 
             </table>
-            <h2>總計</h2>
+            <h2>Общий</h2>
             {!! Form::number('total', 0, array('placeholder' => '','class' => 'form-control', 'disabled' => true,'id'=>'total')) !!}<br>
 
 
 
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary submit">Submit</button>
+            <button type="submit" class="btn btn-primary submit">Подтвердить</button>
         </div>
     </div>
 

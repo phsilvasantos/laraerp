@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Permission Management</h2>
+                <h2>Управление полномочиями</h2>
             </div>
             <div class="pull-right">
                 {{--@permission('permission-create')--}}
-                {{--<a class="btn btn-success" href="{{ route('permissions.create') }}"> Create New Permission</a>--}}
+                {{--<a class="btn btn-success" href="{{ route('permissions.create') }}"> Create New Разрешение</a>--}}
                 {{--@endpermission--}}
             </div>
         </div>
@@ -18,15 +18,15 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    <a href="javascript:void(0);" class="btn btn-primary act-button-expand-all "> ＋ Expand All</a>
-    <a href="javascript:void(0);" class="btn btn-primary act-button-collapse-all"> — Collapse All</a></br>
+    <a href="javascript:void(0);" class="btn btn-primary act-button-expand-all "> ＋ Расширить все</a>
+    <a href="javascript:void(0);" class="btn btn-primary act-button-collapse-all"> — Свернуть все</a></br>
 
     <table class="table table-bordered collaptable">
         <tr class="active">
-            <th>Name</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th width="280px">Action</th>
+            <th>Названия</th>
+            <th>Описание</th>
+            <th>Статус</th>
+            <th width="280px">Действие</th>
         </tr>
         @each('permissions.child', $categories, 'category')
     </table>

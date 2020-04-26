@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>共通代碼管理</h2>
+                <h2>Общее управление кодом</h2>
             </div>
             <div class="pull-right">
                 {{--@permission('customer-create')--}}
-                <a class="btn btn-success" href="{{ route('commoncode.create') }}"> 新增共通代碼</a>
+                <a class="btn btn-success" href="{{ route('commoncode.create') }}">Добавить общий код</a>
                 {{--@endpermission--}}
             </div>
         </div>
@@ -22,10 +22,10 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>代碼名稱</th>
-            <th>父類別</th>
-            <th>對應系統</th>
-            <th width="280px">Action</th>
+            <th>Название</th>
+            <th>Родительская категория</th>
+            <th>Соответствующая система</th>
+            <th width="280px">Действие</th>
         </tr>
         @foreach ($commons as $key => $common)
             <tr>
@@ -38,9 +38,9 @@
                 @endif
                 <td>{{ $common->permission->display_name }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ route('commoncode.show',$common->id) }}">顯示</a>
+                    <a class="btn btn-info" href="{{ route('commoncode.show',$common->id) }}">Просмотр</a>
                     {{--@permission('company-edit')--}}
-                    <a class="btn btn-primary" href="{{ route('commoncode.edit',$common->id) }}">編輯</a>
+                    <a class="btn btn-primary" href="{{ route('commoncode.edit',$common->id) }}">Редатировать</a>
                     {{--@endpermission--}}
                 </td>
             </tr>

@@ -4,7 +4,7 @@
 # {{ $greeting }}
 @else
 @if ($level == 'error')
-# Whoops!
+# Упс!
 @else
 # Hello!
 @endif
@@ -16,7 +16,7 @@
 
 @endforeach
 
-{{-- Action Button --}}
+{{-- Действие Button --}}
 @isset($actionText)
 <?php
     switch ($level) {

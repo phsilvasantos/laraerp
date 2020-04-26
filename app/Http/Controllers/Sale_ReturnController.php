@@ -34,7 +34,7 @@ class Sale_ReturnController extends Controller
         //
         $customers = Customer::pluck('customer_name', 'id')->all();
 
-        $collection = collect(['0'=>'請選擇']);
+        $collection = collect(['0'=>'Пожалуйста, выберите']);
         foreach ($customers as $key => $value) {
             $collection->put($key, $value);
         }
@@ -42,7 +42,7 @@ class Sale_ReturnController extends Controller
         $user_name=Auth::user()->user_name;
 
         $products=Product::pluck('product_name','id');
-        $col = collect(['0'=>'請選擇']);
+        $col = collect(['0'=>'Пожалуйста, выберите']);
         foreach ($products as $key => $value) {
             $col->put($key, $value);
         }
