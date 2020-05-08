@@ -43,7 +43,17 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('sale', 'SaleController');
     Route::resource('sale_return', 'Sale_ReturnController');
 
-
+    Route::get('config-cache', function () {
+        \Artisan::call('config:cache');
+        dd("Done");
+    });
+    Route::get('db-migrate', function () {
+        \Artisan::call('migrate');
+        dd("Done");
+    });
+    Route::get('db-seed', function () {
+        \Artisan::call('db:seed');
+        dd("Done");
+    });
 
 });
-
