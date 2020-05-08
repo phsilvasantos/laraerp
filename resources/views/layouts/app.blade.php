@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
     {{--    <title>{{ config('app.name', 'Laravel') }}</title>--}}
-    <title>ERP - @yield('title', config('app.name', 'Laravel'))</title>
+    <title>ERP - @yield('title', config('app.name', 'All Trans'))</title>
     <meta name="keywords" content="{{ config('app.name', 'Laravel') }}">
     <meta name="description" content="{{ config('app.name', 'Laravel') }}">
 
