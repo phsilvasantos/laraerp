@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Company Management</h2>
+                <h2>Управление компанией</h2>
             </div>
             <div class="pull-right">
                 @permission('company-create')
-                <a class="btn btn-success" href="{{ route('company.create') }}"> Create New Company</a>
+                <a class="btn btn-success" href="{{ route('company.create') }}"> Добавить новую компанию</a>
                 @endpermission
             </div>
         </div>

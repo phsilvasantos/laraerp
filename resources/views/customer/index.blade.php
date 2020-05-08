@@ -7,7 +7,7 @@
             </div>
             <div class="pull-right">
                 {{--@permission('customer-create')--}}
-                <a class="btn btn-success" href="{{ route('customer.create') }}"> Создать нового клиента</a>
+                <a class="btn btn-success" href="{{ route('customer.create') }}"> Добавить нового клиента</a>
                 {{--@endpermission--}}
             </div>
         </div>

@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Редактировать Company</h2>
+                <h2>Редактировать {{$company->company_name}}</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('company.index') }}"> Назад</a>
